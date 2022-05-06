@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mapsFragment"
+        android:icon="@drawable/map_icon"
+        android:title="Map" />
+    <item
+        android:id="@+id/tractorsFragment"
+        android:icon="@drawable/tractor_icon"
+        android:title="tractors" />
+    <item
+        android:id="@+id/bookingsFragment"
+        android:icon="@drawable/booking_icon"
+        android:title="booking" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile" />
+</menu>
