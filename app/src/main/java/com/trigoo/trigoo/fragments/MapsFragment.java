@@ -2,10 +2,14 @@ package com.trigoo.trigoo.fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,8 +20,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.trigoo.trigoo.R;
+import com.trigoo.trigoo.databinding.FragmentMapsBinding;
 
-public class MapsFragment extends Fragment {
+public class MapsFragment extends Fragment implements SearchView.OnQueryTextListener {
+
+    private FragmentMapsBinding tasarim;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -32,9 +39,11 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng elma = new LatLng(39.918313, 33.161672);
+            googleMap.addMarker(new MarkerOptions().position(elma).title("Elmadağ Arazisi"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(elma));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(elma, 12.0f));
+
         }
     };
 
@@ -43,7 +52,13 @@ public class MapsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_maps, container, false);
+        tasarim = FragmentMapsBinding.inflate(inflater, container, false);
+
+        tasarim.toolbarMap.setTitle("Tractor Booking");
+        //Search menu
+        ((AppCompatActivity)getActivity()).setSupportActionBar(tasarim.toolbarMap);
+
+        return tasarim.getRoot();
     }
 
     @Override
@@ -55,4 +70,27 @@ public class MapsFragment extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.toolbar_search,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
+
 }

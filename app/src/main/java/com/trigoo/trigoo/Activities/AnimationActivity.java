@@ -1,4 +1,4 @@
-package com.trigoo.trigoo;
+package com.trigoo.trigoo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,8 @@ import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.trigoo.trigoo.R;
 import com.trigoo.trigoo.databinding.ActivityAnimationBinding;
 
 public class AnimationActivity extends AppCompatActivity {
@@ -30,7 +29,7 @@ public class AnimationActivity extends AppCompatActivity {
         setContentView(tasarim.getRoot());
 
         //Animation
-        topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
         locationAnim = AnimationUtils.loadAnimation(this,R.anim.location_animation);
 
@@ -43,7 +42,7 @@ public class AnimationActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(AnimationActivity.this,MainActivity.class);
+                Intent intent = new Intent(AnimationActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

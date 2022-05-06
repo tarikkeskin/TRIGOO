@@ -1,4 +1,4 @@
-package com.trigoo.trigoo;
+package com.trigoo.trigoo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
@@ -8,6 +8,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
+import com.trigoo.trigoo.R;
 import com.trigoo.trigoo.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

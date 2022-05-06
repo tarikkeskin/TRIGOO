@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--  yesilimsi renkler -->
+    <color name="mainColor_1">#6A8C61</color>
+    <color name="mainColor_2">#BABF17</color>
+    <color name="mainColor_3">#ACD36E</color>
+    <color name="mainColor_4">#F2EB85</color>
+    <color name="mainColor_5">#734636</color>
+
+    <!--  Kirmizimsi renkler -->
+    <color name="mainColor_11">#F28E85</color>
+    <color name="mainColor_12">#731212</color>
+    <color name="mainColor_13">#A61F1F</color>
+    <color name="mainColor_14">#D93232</color>
+
+
+
 </resources>
