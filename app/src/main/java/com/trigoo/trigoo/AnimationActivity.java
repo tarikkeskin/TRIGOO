@@ -11,36 +11,34 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.trigoo.trigoo.databinding.ActivityAnimationBinding;
+
 public class AnimationActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;
 
+    private ActivityAnimationBinding tasarim;
+
     //Variables
     Animation topAnim, bottomAnim,locationAnim;
-    ImageView image,location;
-    TextView logo, slogan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        tasarim = ActivityAnimationBinding.inflate(getLayoutInflater());
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_animation);
+        setContentView(tasarim.getRoot());
 
         //Animation
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
         locationAnim = AnimationUtils.loadAnimation(this,R.anim.location_animation);
 
-        //Hooks
-        image = findViewById(R.id.imageViewTractor);
-        logo  = findViewById(R.id.textViewSlogan);
-        slogan = findViewById(R.id.textViewSubSlogan);
-        location = findViewById(R.id.imageViewLocation);
 
-        image.setAnimation(topAnim);
-        logo.setAnimation(bottomAnim);
-        slogan.setAnimation(bottomAnim);
-        location.setAnimation(locationAnim);
+        tasarim.imageViewTractor.setAnimation(topAnim);
+        tasarim.textViewSlogan.setAnimation(bottomAnim);
+        tasarim.textViewSubSlogan.setAnimation(bottomAnim);
+        tasarim.imageViewLocation.setAnimation(locationAnim);
 
         new Handler().postDelayed(new Runnable() {
             @Override
