@@ -9,14 +9,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trigoo.trigoo.R;
+import com.trigoo.trigoo.databinding.FragmentBookingsBinding;
 
 
 public class BookingsFragment extends Fragment {
+
+    private FragmentBookingsBinding tasarim;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bookings, container, false);
+        tasarim = FragmentBookingsBinding.inflate(inflater, container, false);
+
+        tasarim.toolbarBooking.setTitle("Booking");
+
+        return tasarim.getRoot();
     }
 }

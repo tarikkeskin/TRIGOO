@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1E62E"
+    android:background="@drawable/back_resim"
     tools:context=".Activities.AnimationActivity">
 
     <ImageView
@@ -28,7 +28,8 @@
         android:rotation="-10"
         android:text="TRIGOO"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textColor="@color/mainColor_4"
+        android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLocation" />
@@ -41,7 +42,8 @@
         android:fontFamily="@font/akaya_telivigala"
         android:text="Traktör Bul ve Anına Kirala"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textColor="@color/mainColor_4"
+        android:textSize="21sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

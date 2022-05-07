@@ -9,14 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trigoo.trigoo.R;
+import com.trigoo.trigoo.databinding.FragmentProfileBinding;
 
 
 public class ProfileFragment extends Fragment {
 
+    private FragmentProfileBinding tasarim;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        tasarim = FragmentProfileBinding.inflate(inflater, container, false);
+
+        tasarim.toolbarProfil.setTitle("Profilim");
+
+        return tasarim.getRoot();
     }
 }
