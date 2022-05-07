@@ -14,7 +14,7 @@ import com.trigoo.trigoo.databinding.ActivityAnimationBinding;
 
 public class AnimationActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 5000;
+    private static int SPLASH_SCREEN = 1000;
 
     private ActivityAnimationBinding tasarim;
 

@@ -45,7 +45,7 @@ public class TractorsFragment extends Fragment {
         tractorArrayList.add(t7);
 
         TractorAdapter adapter = new TractorAdapter(requireContext(),tractorArrayList);
-        tasarim.rv.setAdapter(adapter);
+        tasarim.rvTractor.setAdapter(adapter);
 
 
 

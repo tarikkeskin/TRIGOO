@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".fragments.BookingsFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Booking"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTamamlanan"
+        android:background="@color/grey"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarBooking"
@@ -28,16 +28,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabBooking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/mainColor_12"
-        android:clickable="true"
-        android:src="@drawable/add_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonYeni"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/booking_subsections_background"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Yeni"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEslesmis"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarBooking" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonTamamlanan"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/booking_subsections_background"
+        android:backgroundTint="@color/mainColor_3"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Tamamlanan"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonEslesmis"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarBooking" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEslesmis"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/booking_subsections_background"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Eşleşen"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTamamlanan"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonYeni"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarBooking" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
