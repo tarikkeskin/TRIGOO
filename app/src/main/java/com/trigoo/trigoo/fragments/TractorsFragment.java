@@ -2,10 +2,18 @@ package com.trigoo.trigoo.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,7 +25,7 @@ import com.trigoo.trigoo.databinding.FragmentTractorsBinding;
 import java.util.ArrayList;
 
 
-public class TractorsFragment extends Fragment {
+public class TractorsFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     private FragmentTractorsBinding tasarim;
     @Override
@@ -27,6 +35,8 @@ public class TractorsFragment extends Fragment {
         tasarim = FragmentTractorsBinding.inflate(inflater, container, false);
 
         tasarim.toolbarTractor.setTitle("Yakınımdaki Traktörler");
+
+        ((AppCompatActivity)getActivity()).setSupportActionBar(tasarim.toolbarTractor);
 
         ArrayList<Tractor> tractorArrayList = new ArrayList<>();
         Tractor t1 = new Tractor(1,"JD5065 + KAZIYICI","Halit Mancar","traktor_1",true,"Üçevler,Adem Kutlu Sk., 06780 Elmadağ/Ankara");
@@ -51,4 +61,38 @@ public class TractorsFragment extends Fragment {
 
         return tasarim.getRoot();
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.toolbar_search,menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(this);
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        search(query);
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        search(newText);
+        return true;
+    }
+
+    public void search(String searchText){
+        Log.e("Buton",searchText);
+    }
+
 }

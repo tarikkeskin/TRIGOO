@@ -7,9 +7,11 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -80,17 +82,28 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.toolbar_search,menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(this);
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        return false;
+        search(query);
+        return true;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        return false;
+        search(newText);
+        return true;
+    }
+
+    public void search(String searchText){
+        Log.e("Buton",searchText);
     }
 
 }

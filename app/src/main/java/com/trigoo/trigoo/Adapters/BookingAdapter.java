@@ -46,7 +46,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.CardDesi
         CardBookingBinding t = holder.tasarim;
 
 
-        t.imageViewHavaResim.setImageResource(
+        t.cardImageViewProfilFoto.setImageResource(
                 mContext.getResources().getIdentifier(booking.getHava_resim(),"drawable",mContext.getPackageName()));
 
         t.cardImageViewProfilFoto.setImageResource(
