@@ -34,7 +34,6 @@ public class AnimationActivity extends AppCompatActivity {
         locationAnim = AnimationUtils.loadAnimation(this,R.anim.location_animation);
 
 
-        tasarim.imageViewTractor.setAnimation(topAnim);
         tasarim.textViewSlogan.setAnimation(bottomAnim);
         tasarim.textViewSubSlogan.setAnimation(bottomAnim);
         tasarim.imageViewLocation.setAnimation(locationAnim);
@@ -42,7 +41,7 @@ public class AnimationActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(AnimationActivity.this, MainActivity.class);
+                Intent intent = new Intent(AnimationActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

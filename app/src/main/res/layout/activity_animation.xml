@@ -4,33 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_resim"
+    android:background="@drawable/login_animation_background"
     tools:context=".Activities.AnimationActivity">
-
-    <ImageView
-        android:id="@+id/imageViewTractor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="40dp"
-        android:rotation="4"
-        android:src="@drawable/tractor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <TextView
         android:id="@+id/textViewSlogan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="200dp"
         android:fontFamily="@font/bangers"
         android:rotation="-10"
         android:text="TRIGOO"
         android:textAlignment="center"
-        android:textColor="@color/mainColor_4"
+        android:textColor="@color/mainColor_2"
         android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLocation" />
 
@@ -38,12 +27,12 @@
         android:id="@+id/textViewSubSlogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="@font/akaya_telivigala"
         android:text="Traktör Bul ve Anına Kirala"
         android:textAlignment="center"
-        android:textColor="@color/mainColor_4"
-        android:textSize="21sp"
+        android:textColor="@color/mainColor_2"
+        android:textSize="25sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +41,12 @@
     <ImageView
         android:id="@+id/imageViewLocation"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="129dp"
+        android:layout_marginTop="340dp"
         android:rotation="-20"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewTractor"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/location_icon" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -64,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.42092457" />
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
