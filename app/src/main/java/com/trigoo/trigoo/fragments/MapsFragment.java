@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,14 +21,22 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.trigoo.trigoo.Activities.FarmerProfileActivity;
+import com.trigoo.trigoo.Activities.LoginActivity;
+import com.trigoo.trigoo.Activities.SignUpActivity;
 import com.trigoo.trigoo.R;
 import com.trigoo.trigoo.databinding.FragmentMapsBinding;
+
+import java.util.HashMap;
 
 public class MapsFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     private FragmentMapsBinding tasarim;
+    private GoogleMap mMap;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -41,6 +51,7 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            mMap = googleMap;
             LatLng elma = new LatLng(39.918313, 33.161672);
             googleMap.addMarker(new MarkerOptions().position(elma).title("Elmadağ Arazisi"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(elma));
@@ -59,6 +70,28 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
         tasarim.toolbarMap.setTitle("Tractor Booking");
         //Search menu
         ((AppCompatActivity)getActivity()).setSupportActionBar(tasarim.toolbarMap);
+
+        LatLng konum = new LatLng(39.9047175, 33.2309199);
+
+        tasarim.floatingActionButton.setOnClickListener(view -> {
+            //39.9047175,33.2309199,934m
+
+            mMap.addMarker(new MarkerOptions().position(konum).title("Elmadağ")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,18f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+        });
+
+
 
         return tasarim.getRoot();
     }
@@ -105,5 +138,7 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
     public void search(String searchText){
         Log.e("Buton",searchText);
     }
+
+
 
 }
