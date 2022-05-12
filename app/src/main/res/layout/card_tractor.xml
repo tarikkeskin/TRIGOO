@@ -17,7 +17,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_margin="3dp"
+            android:background="@color/grey">
 
             <ImageView
                 android:id="@+id/imageViewCardTractor"
@@ -37,6 +38,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="19dp"
                 android:text="JD5075+RIPPER"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageViewCardTractor"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +50,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="9dp"
                 android:text="Tarık Keskin"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageViewCardTractor"
                 app:layout_constraintTop_toBottomOf="@+id/textViewTractorName" />
 
