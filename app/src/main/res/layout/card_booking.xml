@@ -89,7 +89,7 @@
                 android:layout_height="37dp"
                 android:layout_marginStart="-30dp"
                 android:layout_marginTop="13dp"
-                android:backgroundTint="@color/mainColor_12"
+                android:backgroundTint="@color/mainColor_13"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintStart_toEndOf="@+id/cVProfilResim"
                 app:layout_constraintTop_toBottomOf="@+id/iVProfilBackGround">
@@ -149,7 +149,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/decline_shape"
-                android:backgroundTint="@color/mainColor_12"
+                android:backgroundTint="@color/mainColor_13"
                 android:ellipsize="none"
                 android:fontFamily="serif"
                 android:text="Reddet"
