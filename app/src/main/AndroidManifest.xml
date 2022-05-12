@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TRIGOO">
         <activity
+            android:name=".Activities.AddBookingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.FarmerProfileActivity"
             android:exported="false" />
         <activity

@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/drawable/signup_tractorbutton_background.xml" value="0.227" />
         <entry key="app/src/main/res/drawable/tractor_icon.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/transparent_login_background.xml" value="0.2175" />
+        <entry key="app/src/main/res/layout/activity_add_booking.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_animation.xml" value="0.2343556722005208" />
         <entry key="app/src/main/res/layout/activity_farmer_profile.xml" value="0.321875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4036458333333333" />

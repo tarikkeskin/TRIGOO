@@ -74,4 +74,17 @@
         app:layout_constraintStart_toEndOf="@+id/buttonYeni"
         app:layout_constraintTop_toBottomOf="@+id/toolbarBooking" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/mainColor_12"
+        android:clickable="true"
+        android:src="@drawable/add_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

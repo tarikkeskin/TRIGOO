@@ -1,6 +1,8 @@
 package com.trigoo.trigoo.Entity;
 
-public class Booking {
+import java.io.Serializable;
+
+public class Booking implements Serializable {
     private int booking_id;
     private String hava_resim;
     private String profil_resim;
@@ -9,8 +11,19 @@ public class Booking {
     private float hava_derece;
     private String hava_durumu;
     private String hava_durumu_detay;
+    private String arac_model;
+    private String tarih;
 
-    public Booking(int booking_id, String hava_resim, String profil_resim, String farmer_isim, String booking_detay, float hava_derece, String hava_durumu, String hava_durumu_detay) {
+    public Booking(int booking_id,
+                   String hava_resim,
+                   String profil_resim,
+                   String farmer_isim,
+                   String booking_detay,
+                   float hava_derece,
+                   String hava_durumu,
+                   String hava_durumu_detay,
+                   String arac_model,
+                   String tarih) {
         this.booking_id = booking_id;
         this.hava_resim = hava_resim;
         this.profil_resim = profil_resim;
@@ -19,6 +32,24 @@ public class Booking {
         this.hava_derece = hava_derece;
         this.hava_durumu = hava_durumu;
         this.hava_durumu_detay = hava_durumu_detay;
+        this.arac_model = arac_model;
+        this.tarih = tarih;
+    }
+
+    public String getTarih() {
+        return tarih;
+    }
+
+    public void setTarih(String tarih) {
+        this.tarih = tarih;
+    }
+
+    public String getArac_model() {
+        return arac_model;
+    }
+
+    public void setArac_model(String arac_model) {
+        this.arac_model = arac_model;
     }
 
     public int getBooking_id() {

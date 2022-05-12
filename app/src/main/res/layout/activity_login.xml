@@ -13,10 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:fontFamily="@font/adamina"
+        android:fontFamily="@font/dancing_script"
         android:text="TRIGOO"
         android:textColor="@color/mainColor_2"
-        android:textSize="34sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -28,7 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="210dp"
         android:layout_marginEnd="32dp"
         android:background="@color/transparent_white"
         android:hint="Email / Telefon Numarası"
@@ -50,8 +50,7 @@
             android:shadowColor="@color/white"
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
-            android:textColorLink="@color/white"
-            />
+            android:textColorLink="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -108,20 +107,20 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="245dp"
+        android:layout_width="35dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="212dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/login_person_icon" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="46dp"
+        android:layout_width="35dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@drawable/key_icon" />

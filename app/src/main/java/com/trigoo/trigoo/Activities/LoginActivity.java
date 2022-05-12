@@ -17,6 +17,12 @@ public class LoginActivity extends AppCompatActivity {
         t = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(t.getRoot());
 
+        t.buttonGirisYap.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
         t.textViewSifremiUnuttum.setOnClickListener(view -> {
             Log.e("Buton","Şifremi Unuttum");
         });

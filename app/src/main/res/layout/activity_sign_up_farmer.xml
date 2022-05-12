@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:fontFamily="@font/adamina"
+        android:fontFamily="@font/dancing_script"
         android:text="TRIGOO"
         android:textColor="@color/mainColor_2"
         android:textSize="34sp"
@@ -40,6 +40,9 @@
         android:layout_marginEnd="32dp"
         android:background="@color/transparent_white"
         android:hint="İsim Soyisim"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:errorTextColor="@color/white"
         app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
@@ -59,17 +62,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:background="@color/transparent_white"
         android:hint="Telefon Numarası"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:errorTextColor="@color/white"
+        app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        android:background="@color/transparent_white">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-             />
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,6 +89,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/transparent_white"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:errorTextColor="@color/white"
         app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
@@ -104,6 +117,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:hint="Şifre Tekrar"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:errorTextColor="@color/white"
+        app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
@@ -115,7 +132,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/transparent_white"
-             />
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
