@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -53,7 +56,7 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
         public void onMapReady(GoogleMap googleMap) {
             mMap = googleMap;
             LatLng elma = new LatLng(39.918313, 33.161672);
-            googleMap.addMarker(new MarkerOptions().position(elma).title("Elmadağ Arazisi"));
+            googleMap.addMarker(new MarkerOptions().position(elma).title("Benim Konumum"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(elma));
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(elma, 12.0f));
 
@@ -72,13 +75,24 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
         ((AppCompatActivity)getActivity()).setSupportActionBar(tasarim.toolbarMap);
 
         LatLng konum = new LatLng(39.9047175, 33.2309199);
+        LatLng konum2 = new LatLng(39.9247175, 33.2409199);
+        LatLng konum3 = new LatLng(39.9147175, 33.2209199);
+        LatLng konum4 = new LatLng(39.9415925, 33.1755316);
+        LatLng konum5 = new LatLng(39.9321012, 33.1487989);
+        LatLng konum6 = new LatLng(39.971226, 33.111325);
 
-        tasarim.floatingActionButton.setOnClickListener(view -> {
+
+        tasarim.fabListTractors.setOnClickListener(view -> {
             //39.9047175,33.2309199,934m
+
+            /**
+             * Markers examples for Visualization
+             * 1. marker
+             */
 
             mMap.addMarker(new MarkerOptions().position(konum).title("Elmadağ")
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,18f));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
             mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
             mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -89,7 +103,148 @@ public class MapsFragment extends Fragment implements SearchView.OnQueryTextList
                 }
             });
 
+            Circle circle = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.9047175, 33.2309199))
+                    .radius(600)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+            /**
+             * 2.marker
+             */
+
+            mMap.addMarker(new MarkerOptions().position(konum2).title("Kırıkkale")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+            Circle circle2 = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.9247175, 33.2409199))
+                    .radius(940)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+
+            /**
+             * 3.marker
+             */
+
+            mMap.addMarker(new MarkerOptions().position(konum4).title("Ediğe")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            Circle circle3 = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.9147175, 33.2209199))
+                    .radius(520)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+
+
+            /**
+             * 4.marker
+             */
+
+            mMap.addMarker(new MarkerOptions().position(konum3).title("Altındağ")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            Circle circle4 = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.9415925, 33.1755316))
+                    .radius(1820)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+            /**
+             * 5.marker
+             */
+
+            mMap.addMarker(new MarkerOptions().position(konum5).title("Altındağ")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            Circle circle5 = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.9321012, 33.1487989))
+                    .radius(1520)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+            /**
+             * 6. marker
+             */
+
+            mMap.addMarker(new MarkerOptions().position(konum6).title("Mamak/Karşıyaka")
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_map_green_icon)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(konum,14f));
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(@NonNull Marker marker) {
+                    Intent intent = new Intent(getActivity(), FarmerProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            Circle circle6 = mMap.addCircle(new CircleOptions()
+                    .center(new LatLng(39.971226, 33.111325))
+                    .radius(1000)
+                    .strokeColor(Color.YELLOW)
+                    .strokeWidth(4)
+                    .fillColor(R.color.transparent_green));
+
+
         });
+
+        tasarim.fabMyLocation.setOnClickListener(view -> {
+
+            LatLng elma = new LatLng(39.918313, 33.161672);
+            mMap.addMarker(new MarkerOptions().position(elma).title("Benim Konumum"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(elma));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(elma, 12.0f));
+
+
+        });
+
 
 
 
