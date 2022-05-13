@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/grey">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewProfil"
@@ -26,13 +27,14 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="25dp"
-            android:elevation="25dp">
+            android:elevation="25dp"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="6dp">
+                android:layout_margin="6dp"
+                >
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cVProfilResim"
@@ -66,7 +68,7 @@
                     android:layout_width="34dp"
                     android:layout_height="37dp"
                     android:layout_marginStart="-30dp"
-                    android:layout_marginTop="13dp"
+                    android:layout_marginTop="18dp"
                     android:backgroundTint="@color/mainColor_13"
                     app:cardCornerRadius="100dp"
                     app:layout_constraintStart_toEndOf="@+id/cVProfilResim"
@@ -171,7 +173,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
-                    android:background="@drawable/grad"
+                    android:background="@drawable/grad_2"
                     android:fontFamily="@font/adamina"
                     android:text="Bilgilerimi Güncelle"
                     android:textAlignment="center"

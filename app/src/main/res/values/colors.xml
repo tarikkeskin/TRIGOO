@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#E3E1E1</color>
+    <color name="grey_2">#DDDDDD</color>
 
     <!--  yesilimsi renkler -->
     <color name="mainColor_1">#6A8C61</color>
